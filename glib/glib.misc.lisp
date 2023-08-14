@@ -110,6 +110,8 @@
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (cond ((cffi-features:cffi-feature-p :x86-64) (defctype g-size :uint64))
         ((cffi-features:cffi-feature-p :x86)    (defctype g-size :ulong))
+        ((cffi-features:cffi-feature-p :arm)    (defctype g-size :ulong))
+        ((cffi-features:cffi-feature-p :arm64)  (defctype g-size :uint64))
         ((cffi-features:cffi-feature-p :ppc32)  (defctype g-size :uint32))
         ((cffi-features:cffi-feature-p :ppc64)  (defctype g-size :uint64))
         (t
